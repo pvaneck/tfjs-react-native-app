@@ -10,8 +10,8 @@ module.exports = {
     }),
   },
   resolver: {
-    // assetExts: ['bin', 'txt', 'jpg', 'ttf'],
-    // sourceExts: ['js', 'json', 'ts', 'tsx', 'jsx'],
+    assetExts: ['bin', 'txt', 'jpg', 'png', 'ttf'],
+    sourceExts: ['js', 'json', 'ts', 'tsx', 'jsx'],
     blacklistRE: blacklist([/platform_node/])
   },
 };
