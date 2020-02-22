@@ -5,7 +5,12 @@ import * as tf from '@tensorflow/tfjs';
 import '@tensorflow/tfjs-react-native';
 
 
-export class App extends React.Component {
+interface AppState {
+  isTfReady: boolean;
+}
+
+
+export class App extends React.Component<{}, AppState> {
   constructor(props) {
     super(props);
     this.state = {
@@ -24,7 +29,7 @@ export class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Is TF.js ready? {this.state.isTfReady ? <Text>Yes</Text> : ''}</Text>
+        <Text>Is TF.js ready? {this.state.isTfReady ? <Text>Yes!</Text> : ''}</Text>
       </View>
     )
   }
