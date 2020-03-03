@@ -7,14 +7,18 @@ import '@tensorflow/tfjs-react-native';
 
 interface AppState {
   isTfReady: boolean;
+  isModelReady: boolean;
 }
 
 
 export class App extends React.Component<{}, AppState> {
+  model: {};
+
   constructor(props) {
     super(props);
     this.state = {
       isTfReady: false,
+      isModelReady: false
     };
   }
 
@@ -24,6 +28,13 @@ export class App extends React.Component<{}, AppState> {
     this.setState({
       isTfReady: true,
     });
+    this.model = await this.loadModel();
+    this.setState({ isModelReady: true });
+  }
+
+  loadModel = async () => {
+    // TODO: Figure out loading from local filesystem.
+    return {}
   }
 
   render() {
